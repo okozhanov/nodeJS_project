@@ -1,22 +1,19 @@
 const fs = require('fs')
 const path = require('path')
+const users = require(path.join(__dirname, 'users.js'))
 
-const boysPath = path.join(__dirname, 'boys')
-const girlsPath = path.join(__dirname, 'girls')
+const menOldFolder = path.join(__dirname, 'menOlderThen20')
+const womenOldFolder = path.join(__dirname, 'womenOlderThen20')
+const menYoungFolder = path.join(__dirname, 'menYoungerThen20')
+const womenYoungFolder = path.join(__dirname, 'womenYoungerThen20')
 
-const mover = (folder, file, fileName) => {
-    let destination;
-    if (folder === boysPath) {
-        destination = girlsPath
-    }
-    if (folder === girlsPath) {
-        destination = boysPath
-    }
+const writer = (destination, user) => {
+    let name = user.name + '.txt'
 
-    fs.rename(
-        file,
-        path.join(destination, fileName),
-        (err) => {
+    fs.writeFile(
+        path.join(destination, name),
+        JSON.stringify(user),
+        err => {
             if (err) {
                 console.log(err)
             }
@@ -24,40 +21,26 @@ const mover = (folder, file, fileName) => {
     )
 }
 
-
-const myFunction = (pathForDirectory) => {
-    fs.readdir(pathForDirectory, (err, data) => {
-        if (err) {
-            console.log(err)
-            return;
+const judge = (users) => {
+    users.forEach(user => {
+        if (user.gender === 'female') {
+            if (user.age >= 20) {
+                writer(womenOldFolder, user)
+            }
+            if (user.age < 20) {
+                writer(womenYoungFolder, user)
+            }
         }
 
-        data.forEach(fileName => {
-            let thisFile = path.join(pathForDirectory, fileName)
-
-            fs.readFile(thisFile, ((err, data) => {
-                if (err) {
-                    console.log(err);
-                    return
-                }
-
-                object = JSON.parse(data.toString())
-
-                if (pathForDirectory === boysPath) {
-                    if (object.gender === 'female') {
-                        mover(pathForDirectory, thisFile, fileName)
-                    }
-                }
-
-                if (pathForDirectory === girlsPath) {
-                    if (object.gender === 'male') {
-                        mover(pathForDirectory, thisFile, fileName)
-                    }
-                }
-            }))
-        })
+        if (user.gender === 'male') {
+            if (user.age >= 20) {
+                writer(menOldFolder, user)
+            }
+            if (user.age < 20) {
+                writer(menYoungFolder, user)
+            }
+        }
     })
 }
 
-myFunction(boysPath);
-myFunction(girlsPath)
+judge(users)
