@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="657d3d7b-cea3-4930-b217-2eb1af5d3784" name="Default Changelist" comment="classwork__1" />
+    <list default="true" id="657d3d7b-cea3-4930-b217-2eb1af5d3784" name="Default Changelist" comment="classwork__1">
+      <change afterPath="$PROJECT_DIR$/menOldFolder/Lyosha.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/menOldFolder/Yutsa.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/menOlderThen20/Lyosha.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/menYoungFolder/Slavik.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/menYoungFolder/Zhenia.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/womenOldFolder/Ella.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/womenOldFolder/Karina.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/womenYoungFolder/Marta.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/womenYoungFolder/Vika.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -21,6 +37,17 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1z01ygcPYn0UYJy0TS2jsxshNO4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -35,7 +62,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.4" />
@@ -66,6 +92,8 @@
       <workItem from="1633367795801" duration="886000" />
       <workItem from="1633368976527" duration="2586000" />
       <workItem from="1633432864590" duration="989000" />
+      <workItem from="1633444807729" duration="2329000" />
+      <workItem from="1633447411930" duration="1099000" />
     </task>
     <task id="LOCAL-00001" summary="lesson_1_classwork">
       <created>1633368032365</created>
