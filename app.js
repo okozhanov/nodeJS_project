@@ -4,14 +4,7 @@ const path = require('path')
 const boysPath = path.join(__dirname, 'boys')
 const girlsPath = path.join(__dirname, 'girls')
 
-const mover = (folder, file, fileName) => {
-    let destination;
-    if (folder === boysPath) {
-        destination = girlsPath
-    }
-    if (folder === girlsPath) {
-        destination = boysPath
-    }
+const mover = (folder, file, fileName, destination) => {
 
     fs.rename(
         file,
@@ -45,13 +38,13 @@ const myFunction = (pathForDirectory) => {
 
                 if (pathForDirectory === boysPath) {
                     if (object.gender === 'female') {
-                        mover(pathForDirectory, thisFile, fileName)
+                        mover(pathForDirectory, thisFile, fileName, girlsPath)
                     }
                 }
 
                 if (pathForDirectory === girlsPath) {
                     if (object.gender === 'male') {
-                        mover(pathForDirectory, thisFile, fileName)
+                        mover(pathForDirectory, thisFile, fileName, boysPath)
                     }
                 }
             }))
