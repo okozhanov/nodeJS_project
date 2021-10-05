@@ -1,0 +1,17 @@
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"name\": \"nodeJS_project\",\r\n  \"version\": \"1.0.0\",\r\n  \"dependencies\": {\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	
++++ b/package.json	
+@@ -2,5 +2,6 @@
+   "name": "nodeJS_project",
+   "version": "1.0.0",
+   "dependencies": {
++    "express": "^4.17.1"
+   }
+ }
