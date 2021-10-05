@@ -7,51 +7,70 @@ const womenOldFolder = 'womenOlderThen20'
 const menYoungFolder = 'menYoungerThen20'
 const womenYoungFolder = 'womenYoungerThen20'
 
-async function writer(destination, user) {
+function dirCreator(name) {
+
+    try {
+        fs.mkdir(path.join(__dirname, name),
+            {recursive: true},
+            (err) => {
+                if (err) {
+                    console.log(err);
+                }
+            })
+        return path.join(__dirname, name)
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+function writer(destination, user) {
     let name = user.name + '.txt'
 
-    await fs.writeFile(
-        path.join(destination, name),
-        JSON.stringify(user),
-        err => {
-            if (err) {
-                console.log(err)
+    try {
+        fs.writeFile(
+            path.join(destination, name),
+            JSON.stringify(user),
+            err => {
+                if (err) {
+                    console.log(err)
+                }
             }
-        }
-    )
+        )
+    } catch (err) {
+        console.log(err);
+    }
 }
 
-async function dirCreator(name) {
-    await fs.mkdir(path.join(__dirname, name),
-        {recursive: true},
-        (err) => {
-            if (err) {
-                console.log(err);
+function judge(users) {
+
+    try {
+        users.forEach(user => {
+            if (user.gender === 'female') {
+                if (user.age >= 20) {
+                    writer(dirCreator(womenOldFolder), user)
+                }
+                if (user.age < 20) {
+                    writer(dirCreator(womenYoungFolder), user)
+                }
+            }
+
+            if (user.gender === 'male') {
+                if (user.age >= 20) {
+                    writer(dirCreator(menOldFolder), user)
+                }
+                if (user.age < 20) {
+                    writer(dirCreator(menYoungFolder), user)
+                }
             }
         })
-    return path.join(__dirname, name)
+    } catch (err) {
+        console.log(err);
+    }
 }
 
-async function judge(users) {
-    await users.forEach(user => {
-        if (user.gender === 'female') {
-            if (user.age >= 20) {
-                writer(dirCreator(womenOldFolder), user)
-            }
-            if (user.age < 20) {
-                writer(dirCreator(womenYoungFolder), user)
-            }
-        }
-
-        if (user.gender === 'male') {
-            if (user.age >= 20) {
-                writer(dirCreator(menOldFolder), user)
-            }
-            if (user.age < 20) {
-                writer(dirCreator(menYoungFolder), user)
-            }
-        }
-    })
+try {
+    judge(users)
+} catch (err) {
+    console.log(err);
 }
 
-judge(users)
