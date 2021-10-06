@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+
 const users = require(path.join(__dirname, 'users.js'))
 
 const menOldFolder = 'menOlderThen20'
@@ -45,23 +46,26 @@ function judge(users) {
 
     try {
         users.forEach(user => {
-            if (user.gender === 'female') {
-                if (user.age >= 20) {
+            if (user.gender === 'female' && user.age >= 20) {
                     writer(dirCreator(womenOldFolder), user)
+                return;
                 }
-                if (user.age < 20) {
-                    writer(dirCreator(womenYoungFolder), user)
-                }
+
+            if (user.gender === 'female' && user.age < 20) {
+                writer(dirCreator(womenYoungFolder), user)
+                return;
             }
 
-            if (user.gender === 'male') {
-                if (user.age >= 20) {
-                    writer(dirCreator(menOldFolder), user)
-                }
-                if (user.age < 20) {
-                    writer(dirCreator(menYoungFolder), user)
-                }
+            if (user.gender === 'male' && user.age >= 20) {
+                writer(dirCreator(menOldFolder), user)
+                return;
             }
+
+            if (user.gender === 'male' && user.age < 20) {
+                writer(dirCreator(menYoungFolder), user)
+            }
+
+
         })
     } catch (err) {
         console.log(err);
